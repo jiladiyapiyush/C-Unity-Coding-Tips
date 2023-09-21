@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class Drag : MonoBehaviour
 {
-
+    // Either in 2D or 3D This works fine just attach this script to game object and you can able to drag with mouse or touch input
+    // Insure that collider is attached to GameObject 
     private void OnMouseDrag()
     {
-        transform.position = new Vector2 (Input.mousePosition.x,Input.mousePosition.y);
-    }
+        transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
 
+    }
 }
