@@ -1,0 +1,26 @@
+// Simple Drag in Unity 
+using UnityEngine;
+
+public class Drag : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+    private void OnMouseDown()
+    {
+        Debug.Log("Mouse Down");
+    }
+    private void OnMouseDrag()
+    {
+        transform.position = new Vector2 (Input.mousePosition.x,Input.mousePosition.y);
+    }
+
+}
