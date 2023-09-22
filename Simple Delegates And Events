@@ -1,0 +1,42 @@
+//Script No 1
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Lisner : MonoBehaviour
+{
+
+    private void OnEnable()
+    {
+        Delegate.OnmyEvent += Lis;
+    }
+    private void OnDisable()
+    {
+        Delegate.OnmyEvent -= Lis;
+    }
+
+
+    void Lis()
+    {
+        print("Listner Says Hellow ");
+    }
+}
+//Script No 2
+using UnityEngine;
+public class Delegate : MonoBehaviour
+{
+    public delegate void MyDelegate();
+    public static event MyDelegate OnmyEvent;
+
+    private void Start()
+    {
+        SayHello();
+    }
+    void SayHello()
+    {
+        if (OnmyEvent != null)
+        {
+            OnmyEvent();
+        }
+    }
+}
